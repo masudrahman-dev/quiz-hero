@@ -5,38 +5,40 @@ let quizData;
 let answers = [];
 
 // Dom elements called
-let startQuiz = document.querySelector("#startQuiz");
-let rulesContainer = document.querySelector("#rulesContainer");
-let alertContainer = document.querySelector("#alertContainer");
-let submitContainer = document.querySelector("#submitContainer");
-let quizContainer = document.querySelector("#quizContainer");
-let answersContainer = document.querySelector("#answersContainer");
-let displayResult = document.querySelector("#displayResult");
+let startQuiz = document.querySelector('#startQuiz');
+let rulesContainer = document.querySelector('#rulesContainer');
+let alertContainer = document.querySelector('#alertContainer');
+let submitContainer = document.querySelector('#submitContainer');
+let quizContainer = document.querySelector('#quizContainer');
+let answersContainer = document.querySelector('#answersContainer');
+let displayResult = document.querySelector('#displayResult');
 
 // EventListener for quiz start button
-startQuiz.addEventListener("click", () => {
-  let countDown = document.querySelector("#countDownContainer");
-  let counter = document.querySelector("#counter");
+startQuiz.addEventListener('click', () => {
+  let countDown = document.querySelector('#countDownContainer');
+  let counter = document.querySelector('#counter');
   let counterNum = 2;
-  countDown.classList.remove("hidden");
-  countDown.classList.add("flex");
+  countDown.classList.remove('hidden');
+  // countDown.classList.add("block");
+  countDown.classList.add('flex');
 
   let x = setInterval(() => {
     if (counterNum < 0) {
-      coutDown.classList.remove("flex");
-      coutDown.classList.add("hidden");
+      coutDown.classList.remove('flex');
+      coutDown.classList.add('hidden');
       counterNum = 3;
       count = 0;
       timer = null;
       quizData = null;
       answers = [];
-      rulesContainer.classList.add("hidden");
-      alertContainer.classList.remove("hidden");
-      submitContainer.classList.remove("hidden");
-      submitContainer.classList.add("flex");
+      rulesContainer.classList.add('hidden');
+      alertContainer.classList.remove('hidden');
+      submitContainer.classList.remove('hidden');
+      submitContainer.classList.add('flex');
       loadQuiz();
       quizTimer();
       clearInterval(x);
+      // countDown.classList.add("hidden");
     }
     counter.innerText = counterNum;
     counterNum--;
@@ -45,7 +47,7 @@ startQuiz.addEventListener("click", () => {
 
 // All quiz data fetched from json
 const loadQuiz = async () => {
-  const res = await fetch("./data/quiz.json");
+  const res = await fetch('./data/quiz.json');
   const data = await res.json;
   quizData = data;
   displayQuiz(data);
@@ -54,7 +56,7 @@ const loadQuiz = async () => {
 // Displaying quiz on quiz page
 const displayQuiz = (data) => {
   if (!data) {
-    quizContainer.innerHTML = "";
+    quizContainer.innerHTML = '';
     return;
   }
 
@@ -74,7 +76,7 @@ const displayQuiz = (data) => {
 };
 
 // EventListener for quiz submit button
-document.querySelector("#submit").addEventlistener("click", () => {
+document.querySelector('#submit').addEventListener('click', () => {
   if (answers.length < 6) {
     return;
   }
@@ -83,11 +85,11 @@ document.querySelector("#submit").addEventlistener("click", () => {
   <i class="fa-solid fa-fan animate-spin text-2xl text-green-600"></i>
   <p class="text-xs animate-pulse">Please Wait, We are checking...</p>
 </div>`;
-  let timeTaken = document.querySelector("#count");
+  let timeTaken = document.querySelector('#count');
   let totalMark = 0;
   let grade = {
-    status: "",
-    color: "",
+    status: '',
+    color: '',
   };
 
   for (let ans of answers) {
@@ -97,21 +99,21 @@ document.querySelector("#submit").addEventlistener("click", () => {
   }
 
   if (totalMark === 60) {
-    grade.status = "Excellent";
-    grade.color = "text-green-600";
+    grade.status = 'Excellent';
+    grade.color = 'text-green-600';
   } else if (totalMark >= 40 && totalMark < 60) {
-    grade.status = "Good";
-    grade.color = "text-orange-600";
+    grade.status = 'Good';
+    grade.color = 'text-orange-600';
   } else {
-    grade.status = "Poor";
-    grade.color = "text-red-600";
+    grade.status = 'Poor';
+    grade.color = 'text-red-600';
   }
 
   // data setting on local storage and getting data from local storage
-  let storage = JSON.parse(localStorage.getItem("result"));
+  let storage = JSON.parse(localStorage.getItem('result'));
   if (storage) {
     localStorage.setItem(
-      "results",
+      'results',
       JSON.stringify([
         ...storage,
         {
@@ -123,7 +125,7 @@ document.querySelector("#submit").addEventlistener("click", () => {
     );
   } else {
     localStorage.setItem(
-      "results",
+      'results',
       JSON.stringify([
         {
           marks: totalMark,
@@ -146,8 +148,8 @@ document.querySelector("#submit").addEventlistener("click", () => {
     </h1>
     <p class="text-sm flex justify-center items-center gap-2">
       Total Time: <span class="text-xl text-orange-500">${timeTaken.innerText.replace(
-        "sec",
-        ""
+        'sec',
+        ''
       )}<span class="text-xs">sec</span></span>
     </p>
   </div>
@@ -173,8 +175,8 @@ document.querySelector("#submit").addEventlistener("click", () => {
       <div>${item.examTime}</div>
       </div>`
       )
-      ?.join("")}`
-      : ""
+      ?.join('')}`
+      : ''
   }
   </div>
   `;
