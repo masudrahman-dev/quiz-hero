@@ -170,21 +170,78 @@
                     </div>
                     <p>this is defferences I talk about little bit😎</p>
                 </div>
-                <li class="font-bold text-lg"><a href="#">differences of localStorage, sessionStorage and cookies ?</a>
+                <li class="font-bold text-xl mt-7"><a href="#">differences of localStorage, sessionStorage and cookies
+                        ?</a>
                 </li>
+                <div>
+
+                    <div>
+                        <h3 class="text-bold text-lg">localStorage:</h3>
+                        <p> allows us to store data on the user's computer without an expiration date. This
+                            means that the data will not delete even after the browser closes or computer turn off . It
+                            is useful for storing non-sensitive data such as user preferences, website
+                            settings, or user-generated content.</p>
+                    </div>
+                    <div>
+
+                        <h3 class="text-bold text-lg">sessionStorage:</h3>
+                        <p>similar to localStorage, but the data is only available during the current
+                            browser session. This means that the data will be lost once the user closes the browser. It
+                            is useful for storing temporary data such as the contents of a shopping cart or a user's
+                            login information during a session</p>
+                    </div>
+                    <div>
+
+                        <h3 class="text-bold text-lg">Cookies:</h3>
+                        <p>Cookies are small text files that are stored on the user's computer by the browser. They can
+                            be used to store data such as user preferences, login information, and tracking data.
+                            Cookies have an expiration date, so they can be used to store data that needs to be retained
+                            between browser sessions</p>
+                    </div>
+                </div>
+                <li class="font-bold text-xl mt-7"><a href="#">What is event loop and how it work ?</a>
+                </li>
+                <div>
+                    <h3 class="text-bold text-lg">event loop:</h3>
+                    <p>The event loop is a fundamental concept in JavaScript that enables asynchronous programming,
+                        allowing web applications to handle multiple tasks simultaneously without blocking the main
+                        thread. here I give some example...</p>
+                    <ol class="list-decimal list-inside">
+                        <li>fetch data</li>
+                        <li>event handler</li>
+                        <li>setInterval</li>
+                        <li>setTimeOut</li>
+                        <li>async await</li>
+                        <p>all of the task is happens by event loop</p>
+                    </ol>
+                    <p>event loop have a queue that follow FIFO data structure (first in first out).
+                        when callStack has empty then event loop pass to object to callstack and callStack execute code
+                        simultaneously.
+                    </p>
+                </div>
+                <li class="font-bold text-xl mt-7"><a href="#">what is the work of quizTimer and chooseQuiz function ?
+                </li>
+                <div>
+                    <h3 class="text-bold text-lg">quizTimer function:</h3>
+                    <p>count the time quiz time how much we span for giving answer before submit quiz. it has a
+                        setInterval function that increa the time that we need</p>
+                    <h3 class="text-bold text-lg">chooseQuiz function:</h3>
+                    <p>when use choose a answer then chooseQuiz call by a onclick event handler. the function when we
+                        call this add a to answer list and display the answer.</p>
+                </div>
             </ol>
         </article>
     </main>
     <script>
-        let people = [
-            { name: "aaron", age: 65 },
-            { name: "beth", age: 2 },
-            { name: "cara", age: 13 },
-            { name: "daniel", age: 3 },
-            { name: "ella", age: 25 },
-            { name: "fin", age: 1 },
-            { name: "george", age: 43 },
-        ]
+        // let people = [
+        //     { name: "aaron", age: 65 },
+        //     { name: "beth", age: 2 },
+        //     { name: "cara", age: 13 },
+        //     { name: "daniel", age: 3 },
+        //     { name: "ella", age: 25 },
+        //     { name: "fin", age: 1 },
+        //     { name: "george", age: 43 },
+        // ]
 
         // let peopleNames = people.map(person => person.age <= 13)
 
