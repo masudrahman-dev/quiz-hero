@@ -153,10 +153,10 @@ document.querySelector('#submit').addEventListener('click', () => {
       ${totalMark}<span class="text-slate-800">/60</span>
     </h1>
     <p class="text-sm flex justify-center items-center gap-2">
-      Total Time: <span class="text-xl text-orange-500">${timeTaken.innerText.replace(
+      Total Time: <span class="text-base text-orange-500">${timeTaken.innerText.replace(
         'sec',
         ''
-      )}<span class="text-xs">sec</span></span>
+      )}<span class="text-base">sec</span></span>
     </p>
   </div>
   

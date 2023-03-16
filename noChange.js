@@ -121,7 +121,7 @@ const showAnswers = (data) => {
           <h1 class="text-sm">Correct Answer: <span class="text-green-600">${
             answer.answer
           }</span></h1>
-          <p class="text-[10px] mt-5"><span class="font-medium mr-1">Description:</span>${
+          <p class="text-sm mt-5"><span class="font-medium mr-1">Description:</span>${
             answer.description
           }</p>
           </div>
