@@ -54,14 +54,18 @@
             <!-- 1 no answer -->
 
             <ol class="list-decimal list-inside">
-                <li><a href="#">What is the differences of the map, filter, forEach and find method ?</a></li>
-            </ol>
-            <h2 class="underline font-bold">map:</h2>
-            <p>map is array method or higher order function to use iterate over the array and give a new array. if
-                the array is empty the map return a undefine. here some example</p>
+                <li class="font-bold text-lg"><a href="#">What is the differences of the map, filter, forEach and find
+                        method ?</a></li>
+                <div>
 
-            <div class=" ">
-                <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
+
+                    <h2 class="underline font-bold">map:</h2>
+                    <p>map is array method or higher order function to use iterate over the array and give a new array.
+                        if
+                        the array is empty the map return a undefine. here some example</p>
+
+                    <div class="">
+                        <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
                         <code >
                             let people = [
                             { name: "aaron", age: 65 },
@@ -79,15 +83,17 @@
                        //[65, 2, 13, 3, 25, 1, 43]
                         </code>
                     </pre>
-            </div>
-            <p>the map method can not change original array. it gives us a new array according to our requirements.
-                if we want to get a new that will take a only the ages person who is under or equal 13 or certain
-                condition
-                and we use map what will be the output???
-            </p>
+                    </div>
+                    <p>the map method can not change original array. it gives us a new array according to our
+                        requirements.
+                        if we want to get a new that will take a only the ages person who is under or equal 13 or
+                        certain
+                        condition
+                        and we use map what will be the output???
+                    </p>
 
-            <div class=" ">
-                <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
+                    <div class=" ">
+                        <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
                         <code >
                       
                         let peopleNames = people.map(person => person.age <= 13)
@@ -96,12 +102,12 @@
                        //[false, true, true, true, false, true, false]
                         </code>
                     </pre>
-            </div>
-            <p>the output is really frustrating😒</p><em>that's the problem we can solve Using <strong>filter
-                    method</strong></em>
+                    </div>
+                    <p>the output is really frustrating😒</p><em>that's the problem we can solve Using <strong>filter
+                            method</strong></em>
 
-            <div class=" ">
-                <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
+                    <div class=" ">
+                        <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
                                 <code >
                               
                                     let peopleAges = people.filter(person => person.age <= 13)
@@ -112,12 +118,12 @@
                                     // { name: "fin", age: 1 },
                                 </code>
                             </pre>
-            </div>
-            <p>Now, we get a array of object. the object properties value is under or equal 13 . now we use
-                <strong>map</strong> and get my desire output
-            </p>
-            <div class=" ">
-                <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
+                    </div>
+                    <p>Now, we get a array of object. the object properties value is under or equal 13 . now we use
+                        <strong>map</strong> and get my desire output
+                    </p>
+                    <div class=" ">
+                        <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
                                 <code >
                                     let peopleAges = people.filter(person => person.age <= 13)
                                     let peopleAgesFilter = peopleAges.map(peopleAges => peopleAges.age )
@@ -126,41 +132,47 @@
                               
                                 </code>
                             </pre>
-            </div>
-            <p>let's talk about a method that is <strong>find</strong></p>
-            <p>find is similar to filter but it return only first element from the iterable object. this is a example
-            </p>
-            <div class=" ">
-                <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
+                    </div>
+                    <p>let's talk about a method that is <strong>find</strong></p>
+                    <p>find is similar to filter but it return only first element from the iterable object. this is a
+                        example
+                    </p>
+                    <div class=" ">
+                        <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
                         <code >
                             let peopleAges = people.find(person => person.age <= 13)
                             console.log(peopleAges)
                             // {name: 'beth', age: 2}                      
                         </code>
                     </pre>
-            </div>
-            <p>the find give only one element that is match first.</p>
-            <div class=" ">
-                <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
+                    </div>
+                    <p>the find give only one element that is match first.</p>
+                    <div class=" ">
+                        <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
                     <code >
                         let peopleAges = people.find(person => person.age <= 13)
                         console.log(peopleAges)
                         // {name: 'beth', age: 2}                                        
                     </code>
                 </pre>
-            </div>
-            <p>lets talks about <strong>forEach method</strong> if you not need to return some thing and do not want to
-                array that time you use <em><strong>forEach method</strong></em>.</p>
-            <div class=" ">
-                <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
+                    </div>
+                    <p>lets talks about <strong>forEach method</strong> if you not need to return some thing and do not
+                        want to
+                        array that time you use <em><strong>forEach method</strong></em>.</p>
+                    <div class=" ">
+                        <pre class="overflow-auto p-7 bg-slate-900 text-slate-50">
                         <code >
                         let peopleAges = people.find(person => person.age <= 13)
                         console.log(peopleAges)
                         // {name: 'beth', age: 2}
                            </code>
                     </pre>
-            </div>
-            <p>this is defferences I talk about little bit😎</p>
+                    </div>
+                    <p>this is defferences I talk about little bit😎</p>
+                </div>
+                <li class="font-bold text-lg"><a href="#">differences of localStorage, sessionStorage and cookies ?</a>
+                </li>
+            </ol>
         </article>
     </main>
     <script>
