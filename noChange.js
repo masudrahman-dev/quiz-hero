@@ -35,9 +35,9 @@ const displayQuizOptions = (quiz, i) => {
   let generatedOptions = '';
   for (let option of quiz) {
     generatedOptions += `<div
-      class="border border-gray-200 rounded text-xs p-2 cursor-pointer"
+      class="border border-gray-200 rounded text-sm p-2 cursor-pointer"
       onclick="chooseQuiz('${i}', '${option}')">
-      <p class="text-[10px] mb-1">Option ${serial}</p>
+      <p class="text-md mb-1">Option ${serial}</p>
       ${option}
     </div>`;
     serial++;
@@ -113,7 +113,9 @@ const showAnswers = (data) => {
   data = data.sort((a, b) => a.id - b.id);
   data.forEach((answer, idx) => {
     quizContainer.innerHTML += `<div class="text-left">
-          <h1 class="mt-4 mb-3 text-md">${idx + 1 + '. ' + answer.question}</h1>
+          <h1 class="mt-4 mb-3 text-base">${
+            idx + 1 + '. ' + answer.question
+          }</h1>
           <div>
           <h1 class="text-sm">Given Answer: <span class="text-orange-600">${
             answer.givenAns
